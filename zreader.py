@@ -12,7 +12,7 @@ class Zreader:
         self.reader = self.dctx.stream_reader(self.fh)
         self.buffer = ''
 
-    
+
     def readlines(self):
         '''Generator method that creates an iterator for each line of JSON'''
         while True:
@@ -25,4 +25,5 @@ class Zreader:
                 yield line
 
             self.buffer = lines[-1]
+        self.fh.close()
 
